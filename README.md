@@ -151,4 +151,8 @@ type MyStruct struct {
 
 Then run go generate for your package.
 
+## Credit 
+
+Code generate accessor functions based on [accessory](https://github.com/masaushi/accessory)
+
 ## License
