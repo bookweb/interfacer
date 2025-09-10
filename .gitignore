@@ -3,3 +3,5 @@
 
 /my_struct.go
 /my_struct.gen.go
+
+.VERSION
