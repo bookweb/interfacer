@@ -1,5 +1,7 @@
 # interfacer
 
+Generate accessor methods and interface for struct in Golang
+
 ## Installation
 
 ## Usage
