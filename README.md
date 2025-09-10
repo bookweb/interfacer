@@ -163,6 +163,7 @@ Then run go generate for your package.
 
 ## Credit 
 
-Code generate accessor functions based on [accessory](https://github.com/masaushi/accessory){target=_blank}
+<!-- Code generate accessor functions based on [accessory](https://github.com/masaushi/accessory){target=_blank} -->
+Code generate accessor functions based on <a href="https://github.com/masaushi/accessory" target="_blank">accessory</a>
 
 ## License
