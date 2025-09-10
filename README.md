@@ -51,6 +51,16 @@ func(m *MyStruct) SetField3(val time.Time) {
     }
     m.field3 = val
 }
+
+type IMyStruct interface {
+	Field1() string
+
+	SetField2(val *int)
+
+	Field3() string
+
+	SetField3(val *string)
+}
 ```
 
 Following to [convention](https://golang.org/doc/effective_go#Getters),
