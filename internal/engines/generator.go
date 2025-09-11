@@ -316,16 +316,13 @@ func (g *generator) generateInterface(structs []*Struct) (string, error) {
 			continue
 		}
 
-		for i, field := range st.Fields {
+		itf += fmt.Sprintf("type %s interface {\n", fmt.Sprintf("I%s", st.Name))
+		for _, field := range st.Fields {
 			if field.Tag == nil {
 				continue
 			}
 
 			params := g.createInterfaceGenParameters(st, field)
-
-			if i == 0 {
-				itf += fmt.Sprintf("type %s interface {\n", params.Interface)
-			}
 
 			if field.Tag.Getter != nil {
 				getter, err := g.generateItfGetter(params)
@@ -343,11 +340,8 @@ func (g *generator) generateInterface(structs []*Struct) (string, error) {
 				itf += setter
 				itf += "\n"
 			}
-
-			if i == len(st.Fields)-1 {
-				itf += fmt.Sprint("}\n")
-			}
 		}
+		itf += fmt.Sprint("}\n")
 	}
 
 	return itf, nil
