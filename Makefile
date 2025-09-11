@@ -1,3 +1,5 @@
+VERSION := $(shell cat .VERSION)
+
 .PHONY: install-deps
 install-deps:
 	go install github.com/bookweb/interfacer/cmd/interfacer@latest
@@ -5,7 +7,7 @@ install-deps:
 .PHONY: build
 
 build:
-	go build -o interfacer cmd/interfacer/main.go
+	go build -o interfacer -ldflags="-w -s -X github.com/bookweb/interfacer/config.Version=${VERSION}" cmd/interfacer/main.go
 
 generate:
 	go generate

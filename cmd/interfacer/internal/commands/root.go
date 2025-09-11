@@ -4,6 +4,7 @@ import (
 	"context"
 	"os"
 
+	"github.com/bookweb/interfacer/config"
 	"github.com/urfave/cli/v3"
 )
 
@@ -11,7 +12,7 @@ func Execute() error {
 	cmd := &cli.Command{
 		Name:    "interfacer",
 		Usage:   "generate interface and setter",
-		Version: "dev",
+		Version: config.Version,
 		Flags: append(
 			RootConfigFlags,
 			RootFlags...,
